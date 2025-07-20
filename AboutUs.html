@@ -1,0 +1,212 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.CSS">
+        <title>AirVenture - Careers</title>
+        <link rel="icon" type="image/png" href="images/logo.png">
+        
+    </head>
+    <body style="margin:0; padding-top:0; display:flex; flex-direction:column; align-items: stretch;">
+        <nav class="bg-sky-800 shadow-lg sticky top-0 z-40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex items-center">
+                        <a href="#" class="flex-shrink-0 text-white text-2xl font-bold flex items-center nav-link-custom" data-page="home">
+                            <i data-lucide="plane" class="mr-2"></i>
+                            AirVenture
+                        </a>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#" class="nav-link-custom" data-page="home" onclick="event.preventDefault(); window.location.href='/AirVenture_Airline/views/landing/index.php';">Home</a>
+                            <a href="#" class="nav-link-custom" data-page="flights" onclick="event.preventDefault(); window.location.href='/AirVenture_Airline/views/flights/index.php';">Flights</a>
+                            <a href="#" class="nav-link-custom nav-link-active-custom" data-page="aboutUs" onclick="event.preventDefault(); window.location.href='/AirVenture_Airline/views/AirVenture-AirLine/AboutUs.Html';">About Us</a>
+                            <a href="#" class="nav-link-custom" data-page="career" onclick="event.preventDefault(); window.location.href='/AirVenture_Airline/views/AirVenture-AirLine/Careers.php';">Careers</a>
+                            <a href="#" class="nav-link-custom" data-page="admin" onclick="event.preventDefault(); window.location.href='/AirVenture_Airline/views/AirVenture-AirLine/AdminLogin.php';">Admin</a>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-4 flex items-center md:ml-6">
+                            <button id="loginModalButton" class="nav-link-custom flex items-center">
+                                <i data-lucide="log-in" class="mr-1 lucide-sm"></i> Login
+                            </button>
+                            <div class="ml-3 relative hidden" id="userProfileDropdownContainer">
+                                <div>
+                                    <button type="button" class="max-w-xs bg-sky-700 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                        <span class="sr-only">Open user menu</span>
+                                        <img class="h-10 w-10 rounded-full" src="https://placehold.co/100x100/E2E8F0/94A3B8?text=User" alt="User Profile">
+                                    </button>
+                                </div>
+                                <div id="userProfileDropdown" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="-mr-2 flex md:hidden">
+                        <button type="button" id="mobileMenuButton" class="bg-sky-700 inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <i data-lucide="menu" class="block h-6 w-6 current-icon"></i>
+                            <i data-lucide="x" class="hidden h-6 w-6 current-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="#" class="nav-link-custom" data-page="home" onclick="event.preventDefault(); window.location.href='/AirVenture_Airline/views/landing/index.php';">Home</a>
+                    <a href="#" class="nav-link-custom" data-page="flights" onclick="event.preventDefault(); window.location.href='/AirVenture_Airline/views/flights/index.php';">Flights</a>
+                    <a href="#" class="nav-link-custom nav-link-active-custom" data-page="aboutUs" onclick="event.preventDefault(); window.location.href='/AirVenture_Airline/views/AirVenture-AirLine/AboutUs.Html';">About Us</a>
+                    <a href="#" class="nav-link-custom" data-page="career" onclick="event.preventDefault(); window.location.href='/AirVenture_Airline/views/AirVenture-AirLine/Careers.php';">Careers</a>
+                    <a href="#" class="nav-link-custom" data-page="admin" onclick="event.preventDefault(); window.location.href='/AirVenture_Airline/views/AirVenture-AirLine/AdminLogin.php';">Admin</a>
+                </div>
+                <div class="pt-4 pb-3 border-t border-sky-700">
+                    <div class="flex items-center px-5">
+                        <button id="loginModalButtonMobile" class="w-full text-left nav-link-custom flex items-center">
+                            <i data-lucide="log-in" class="mr-1 lucide-sm"></i> Login
+                        </button>
+                    </div>
+                    <div class="mt-3 px-2 space-y-1 hidden" id="userProfileDropdownContainerMobile">
+                        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-sky-600 hover:text-white">Your Profile</a>
+                        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-sky-600 hover:text-white">Settings</a>
+                        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-sky-600 hover:text-white">Sign out</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div style="height:54px;"></div>
+
+        <div id="missionSection">
+            <div style="display: flex; justify-content: center; align-items: stretch; gap: 40px; max-width: 1100px; margin: 0 auto 40px auto; padding: 30px 10px;">
+                <!-- Left: Mission Text -->
+                <div class="halfSectionLeft">
+                <div style="flex: 1.2; display: flex; flex-direction: column; justify-content: center;">
+                    <h2 class="loadText" style="font-family: Poppins, sans-serif; color: #003366; margin-bottom: 10px; font-size: 2rem;">Our Mission</h2>
+                    <p class="loadText" style="font-family: Poppins, sans-serif; color: #222; font-size: 1.13rem; line-height: 1.7;">
+                        At AirVenture Airline, our mission is to connect people and places with safety, comfort, and reliability at the heart of every journey.
+                         We are committed to delivering exceptional service, fostering innovation, and ensuring a sustainable future for air travel. Our team 
+                         strives to make every flight a memorable experience, putting our passengers first every step of the way.
+                    </p>
+                </div>
+                </div>
+                <!-- Right: 3 Vertical Images -->
+                <div class="halfSectionRight">
+                <div style="flex: 1; display: flex; flex-direction: flex-start; gap: 14px; align-items: flex-end; justify-content: center;">
+                    <img src="images/AboutUs/mission1.png" class="hoverImage professionalImageEnter" alt="Mission Image 1" style="width: 150px; height: 320px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.10);">
+                    <img src="images/AboutUs/mission3.png"  class="hoverImage professionalImageEnter" alt="Mission Image 2" style="width: 150px; height: 320px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.10);">
+                    <img src="images/AboutUs/mission2.png"  class="hoverImage professionalImageEnter" alt="Mission Image 3" style="width: 150px; height: 320px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.10);">
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="visionSection" class="autoShow">
+            <div style="display: flex; justify-content: center; align-items: stretch; gap: 40px; max-width: 1100px; margin: 0 auto 40px auto; padding: 30px 10px;">
+                <!-- Right: Vision Image -->
+                 <div class="halfSectionRight">
+                <div style="margin-top: 50px; display: flex; flex-direction: flex-start; gap: 14px; align-items: flex-end; justify-content: center;">
+                    <img src="images/AboutUs/vision.png" class="hoverImage professionalImageEnter" alt="Mission Image 1" style="width: 500px; height: 320px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px grey;">
+                </div>
+                </div>
+                <div class="halfSectionLeft">
+                <div style="flex: 1.2; display: flex; flex-direction: column; justify-content: center; margin-left:60px;">
+                    <h2 class="loadText" style="font-family: Poppins, sans-serif; color: #003366; margin-bottom: 10px; font-size: 2rem;">Our Vision</h2>
+                    <p class="loadText" style="font-family: Poppins, sans-serif; color: #222; font-size: 1.13rem; line-height: 1.7;">
+                       The vision for AirVenture Airline is to become the top aviation company in the world, recognized for their commitment, dedication and customer satisfaction. One of the many goals of the company is to allow travellers to make informed decisions and enjoy hassle-free journeys by providing the necessary tools and resources. Through the continuous improvement of the flight booking procedure, AirVenture intends to stay ahead of the trends and always evolve to satisfy the needs of customers around the globe.
+                </div>
+                </div>
+                <!-- Left: 3 Vision Text -->
+                
+            </div>
+        </div>
+
+        <div id="certificateSection">
+            <div class="autoShow">
+                <h1 style="text-align: center; color:#003366; font-family: Poppins, sans-serif;">Board Of Directors</h1>
+                <div style="display: flex; flex-direction:wrap; flex-wrap: wrap; justify-content: center; align-items: center;">
+                    <div class="innerCertificate" style="background-image: url('images/AboutUs/director1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                    <div class="innerCertificate" style="background-image: url('images/AboutUs/director2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                    <div class="innerCertificate" style="background-image: url('images/AboutUs/director3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                    <div class="innerCertificate" style="background-image: url('images/AboutUs/director4.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                    <div class="innerCertificate" style="background-image: url('images/AboutUs/director5.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                    <div class="innerCertificate" style="background-image: url('images/AboutUs/director6.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div id="teamSection" class="autoShow" style="flex-direction: column; margin: 40px 0;">
+            <h2 style="font-family: Poppins, sans-serif; color: #003366;  margin-top:-110px; margin-bottom: 44px; font-size: 2rem; width:100%; text-align:center;">Our Website Development Team</h2>
+            <div style=" display: flex; justify-content: center; flex-wrap: flex-start;">
+                <div class="innerTeam" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="images/AboutUs/zikri.jpg" style="width:150px; height:150px; border-radius:50%; object-fit:cover; border:3px solid #ffffff; background:#fff;">
+                    <span style="margin-top:12px; font-family:Poppins,sans-serif; color:#ffffff; font-weight:600;">Mohamad Irfan Zikri</span>
+                    <span style="margin-top:8px; font-family:Poppins,sans-serif; color:#ffffff; font-size:0.98rem; text-align:center; max-width:180px;">
+                        Project Leader & frontend Developer. Oversees project direction and specializes in UI/UX design and ensures the website is visually appealing and user-friendly.
+                    </span>
+                </div>
+                <div class="innerTeam" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="images/AboutUs/Syazwan.png"  style="width:150px; height:150px; border-radius:50%; object-fit:cover; border:3px solid #ffffff; background:#fff;">
+                    <span style="margin-top:12px; font-family:Poppins,sans-serif; color:#ffffff; font-weight:600;"> Muhammad Syazwan</span>
+                    <span style="margin-top:8px; font-family:Poppins,sans-serif; color:#ffffff; font-size:0.98rem; text-align:center; max-width:180px;">
+                        backend Developer. manages backend integration for seamless user experience.
+                    </span>
+                    </span>
+                </div>
+                <div class="innerTeam" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="images/AboutUs/anas.jpg" style="width:150px; height:150px; border-radius:50%; object-fit:cover; border:3px solid #ffffff; background:#fff;">                
+                    <span style="margin-top:12px; font-family:Poppins,sans-serif; color:#ffffff; font-weight:600;">Muhammad Anas</span>
+                    <span style="margin-top:8px; font-family:Poppins,sans-serif; color:#ffffff; font-size:0.98rem; text-align:center; max-width:180px;">
+                        Database & Security Specialist. Handles data management and implements security best practices for the application.
+                    </span>
+                </div>
+                <div class="innerTeam" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="images/AboutUs/amjad.jpg" style="width:150px; height:150px; border-radius:50%; object-fit:cover; border:3px solid #fafafa; background:#fff;">           
+                    <span style="margin-top:12px; font-family:Poppins,sans-serif; color:#ffffff; font-weight:600;">Amjad Ashraf</span>
+                    <span style="margin-top:8px; font-family:Poppins,sans-serif; color:#ffffff; font-size:0.98rem; text-align:center; max-width:180px;">
+                        Quality Assurance & Documentation. Ensures the project meets standards and maintains clear, organized documentation.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="testimonialSection" class="autoshow">
+            <div >
+                <div class="autoshow">
+                    <h1 style="text-align: center; color:#003366; font-family: Poppins, sans-serif;">Testimonies</h1>
+                </div>
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 24px;">
+                    <div class="innerTestimonial professionalImageEnter" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 28px 24px; max-width: 320px; min-width: 260px; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/AboutUs/testimonial1.png" alt="Customer 1" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid #00a3e9; margin-bottom: 14px;">
+                        <p style="font-family: Poppins, sans-serif; color: #222; font-size: 1.05rem; text-align: center; margin-bottom: 16px; line-height:1.6;">
+                            "AirVenture exceeded my expectations! The booking process was seamless and the staff were incredibly helpful. I felt safe and comfortable throughout my journey."
+                        </p>
+                        <span style="font-family: Poppins, sans-serif; color: #003366; font-weight: 600;">Alicia Tan</span>
+                        <span style="font-family: Poppins, sans-serif; color: #888; font-size: 0.95rem;">Frequent Flyer</span>
+                    </div>
+                    <div class="innerTestimonial professionalImageEnter" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 28px 24px; max-width: 320px; min-width: 260px; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/AboutUs/testimonial2.jpg" alt="Customer 2" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid #00a3e9; margin-bottom: 14px;">
+                        <p style="font-family: Poppins, sans-serif; color: #222; font-size: 1.05rem; text-align: center; margin-bottom: 16px; line-height:1.6;">
+                            "I appreciate AirVenture's commitment to punctuality and customer service. The crew was attentive and made my business trip stress-free. Highly recommended!"
+                        </p>
+                        <span style="font-family: Poppins, sans-serif; color: #003366; font-weight: 600;">Daniel Lee</span>
+                        <span style="font-family: Poppins, sans-serif; color: #888; font-size: 0.95rem;">Business Traveler</span>
+                    </div>
+                    <div class="innerTestimonial professionalImageEnter" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 28px 24px; max-width: 320px; min-width: 260px; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/AboutUs/testimonial3.jpg" alt="Customer 3" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid #00a3e9; margin-bottom: 14px;">
+                        <p style="font-family: Poppins, sans-serif; color: #222; font-size: 1.05rem; text-align: center; margin-bottom: 16px; line-height:1.6;">
+                            "From check-in to landing, everything was smooth. The in-flight amenities and friendly staff made our family vacation truly enjoyable. Thank you, AirVenture!"
+                        </p>
+                        <span style="font-family: Poppins, sans-serif; color: #003366; font-weight: 600;">Siti Rahmah</span>
+                        <span style="font-family: Poppins, sans-serif; color: #888; font-size: 0.95rem;">Family Traveler</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+    </body>
+</html>
